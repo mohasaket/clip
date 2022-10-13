@@ -24,6 +24,10 @@ export class RegisterComponent {
     Validators.maxLength(11)
   ]);
 
+  showAlert=false
+  alertColor='blue'
+  alertMsg="droste faghat zaman bede"
+
   registerForm = new FormGroup({
     name: this.name,
     email: this.email,
@@ -32,4 +36,9 @@ export class RegisterComponent {
     confirmPassword: this.confirmPassword,
     phonNumber: this.phoneNumber,
   });
+  register(){
+    this.showAlert=true;
+    this.alertColor='red';
+    this.alertMsg="droste faghat zaman bede";
+  }
 }

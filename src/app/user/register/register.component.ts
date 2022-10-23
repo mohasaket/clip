@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +10,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent {
 
   inSubmission=false;
-  constructor(private auth: AngularFireAuth) {}
+  constructor(
+    private auth: AngularFireAuth,
+    private db:AngularFirestore
+    ) {}
+
   firstName = new FormControl('', [Validators.required, Validators.minLength(3)]);
   email = new FormControl('', [Validators.required, Validators.email]);
   age = new FormControl('', [
@@ -48,9 +52,14 @@ export class RegisterComponent {
     const { email,password } = this.registerForm.value;
     try {
       const userCred = await this.auth.createUserWithEmailAndPassword(
-        email as string, password as string
-      )
-      console.log(userCred);
+        email as string, password as string)
+       await this.db.collection('users').add({
+          name:this.firstName.value,
+           email:this.email.value,
+           age:this.age.value,
+          phoneNumber:this.phoneNumber.value
+          })
+
     } catch (e) {
       console.error(e);
       this.alertMsg='please ty agin register';

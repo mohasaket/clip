@@ -4,7 +4,7 @@
     <div class="mb-3">
       <label class="inline-block mb-2">Email</label>
       <input  #email="ngModel"
-      type="email" name="email" [(ngModel)]="creadentials.email"
+      type="email" name="email"   [ngModelOptions]="{standalone: true}" [(ngModel)]="creadentials.email"
         class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
           duration-500 focus:outline-none rounded bg-transparent
           focus:border-indigo-400"
@@ -17,7 +17,7 @@
     <!-- Password -->
     <div class="mb-3">
       <label class="inline-block mb-2">Password</label>
-      <input type="password"  #password="ngModel" [(ngModel)]="creadentials.password" required
+      <input type="password"  #password="ngModel"   [ngModelOptions]="{standalone: true}"  [(ngModel)]="creadentials.password" required
         class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
         duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
         placeholder="Password" />

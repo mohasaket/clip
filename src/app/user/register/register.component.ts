@@ -40,7 +40,7 @@ export class RegisterComponent {
     age: this.age,
     password: this.password,
     confirmPassword: this.confirmPassword,
-    phonNumber: this.phoneNumber,
+    phoneNumber: this.phoneNumber,
   });
   async register() {
     this.showAlert = true;

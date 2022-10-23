@@ -9,7 +9,7 @@ interface IModals {
 export class ModalService {
   private modals: IModals[] = [];
 
-  constructor() {}
+  constructor() { }
 
   register(id: string) {
     this.modals.push({ id, visible: false });
@@ -17,13 +17,13 @@ export class ModalService {
   }
 
   isModalOpen(id: string): boolean {
-    return !!this.modals.find((e) => e.id===id)?.visible;
+    return !!this.modals.find((e) => e.id === id)?.visible;
   }
 
-  toggleModal(id:string) {
-   const modal=this.modals.find((e) => e.id);
-   if (modal) {
-modal.visible=!modal.visible
-   }
+  toggleModal(id: string) {
+    const modal = this.modals.find((e) => e.id);
+    if (modal) {
+      modal.visible = !modal.visible
+    }
   }
 }

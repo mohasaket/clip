@@ -10,10 +10,15 @@ import{environment} from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import{AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { VideoModule } from './video/video.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,7 @@ import { CommonModule } from '@angular/common';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    VideoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

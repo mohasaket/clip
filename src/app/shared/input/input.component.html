@@ -1,20 +1,20 @@
-<input [type]="type" [formControl]="control"
-class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
-  duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-[placeholder]="placeholder"  [mask]="format" [dropSpecialCharacters]="false"/>
+<input [type]="type" [formControl]="control" class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+  duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400" [placeholder]="placeholder"
+  [mask]="format" [dropSpecialCharacters]="false" />
 <ng-container *ngIf="control.dirty &&control.touched">
   <p class="text-red-400" *ngIf="control.errors?.pattern">- at least 8 characters
     - must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
     - Can contain special characters</p>
- <p class="text-red-400"  *ngIf="control.errors?.required" >required</p>
- <p class="text-red-400"  *ngIf="control.errors?.minlength" >min lenght</p>
- <!-- <p class="text-red-400"  *ngIf="control.errors?.minlength.requiredLength" >max lenght</p> -->
- <!-- <p class="text-red-400"  *ngIf="control.errors?.minlength.actualLength" >actual length lenght</p> -->
+  <p class="text-red-400" *ngIf="control.errors?.required">required</p>
+  <p class="text-red-400" *ngIf="control.errors?.minlength">min lenght</p>
+  <!-- <p class="text-red-400" *ngIf="control.errors?.minlength.requiredLength">max lenght</p>
+  <p class="text-red-400" *ngIf="control.errors?.minlength.actualLength">actual length lenght</p> -->
 
 </ng-container>
-<ng-container >
-<p *ngIf="control.touched && control.dirty && control.errors?.email " class="text-red-400"  >email moheme</p>
-<p *ngIf=" control.dirty &&control.errors?.min"  class="text-red-400"  >18 kamtar nemishe</p>
-<p *ngIf=" control.dirty &&control.errors?.max"  class="text-red-400"  >120 bishtar na</p>
-<p class="text-red-400"  *ngIf="control.errors?.noMatch" >pass match nist</p>
+<ng-container>
+  <p *ngIf="control.touched && control.dirty && control.errors?.email " class="text-red-400">email moheme</p>
+  <p *ngIf=" control.dirty &&control.errors?.min" class="text-red-400">18 kamtar nemishe</p>
+  <p *ngIf=" control.dirty &&control.errors?.max" class="text-red-400">120 bishtar na</p>
+  <p class="text-red-400" *ngIf="control.errors?.noMatch">pass match nist</p>
+  <p class="text-red-400" *ngIf="control.errors?.emailTaken">emailTaken</p>
 </ng-container>

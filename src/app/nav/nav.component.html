@@ -12,14 +12,14 @@
         </li>
         <ng-template #authLinks>
           <li>
-            <a class="px-2" routerLink="/" routerLinkActive="text-indigo-400"[routerLinkActiveOptions]="{exact:true}" href="#">Manage</a>
+            <a class="px-2" routerLink="/manage" routerLinkActive="text-indigo-400"[routerLinkActiveOptions]="{exact:true}" href="#">Manage</a>
           </li>
           <li>
             <a class="px-2" href="#">Upload</a>
           </li>
         </ng-template>
         <li>
-          <a lass="px-2" (click)="logout($event)">logout</a>
+          <a lass="px-2" (click)="auth.logout($event)">logout</a>
         </li>
         <li routerLinkActive="text-indigo-400">
           <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400">About</a>

@@ -9,7 +9,6 @@ import{AngularFireModule} from'@angular/fire/compat';
 import{environment} from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import{AngularFireAuthModule} from '@angular/fire/compat/auth';
-import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { VideoModule } from './video/video.module';
